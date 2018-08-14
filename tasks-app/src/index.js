@@ -1,17 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './store'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import App from './components/App';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-//import registerServiceWorker from './registerServiceWorker';
-import tasksReducer from './reducers/tasksReducer'
+import App from './client/App'
 
-let store = createStore(tasksReducer);
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-     document.getElementById('root'));
-
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
